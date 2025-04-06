@@ -48,11 +48,6 @@
 
     <script type="module" crossorigin="anonymous" src="app/error-handler.js"></script>
 
-<!--    <style>-->
-<!--        body {-->
-<!--            margin-left: 0 !important;-->
-<!--        }-->
-<!--    </style>-->
     <script type="module">
         import UI from "./app/ui.js";
         import * as Log from './core/util/logging.js';
@@ -102,6 +97,17 @@
         UI.start({ settings: { defaults: defaults,
                 mandatory: mandatory } });
     </script>
+    <style>
+        #noVNC_control_bar {
+            display: none !important;
+        }
+        #noVNC_control_bar_handle {
+            display: none !important;
+        }
+        body {
+            margin-left: 0 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -118,7 +124,7 @@
 <div id="noVNC_control_bar_anchor" class="noVNC_vcenter">
 
     <div id="noVNC_control_bar">
-        <div id="noVNC_control_bar_handle" title="Hide/Show the control bar"><div></div></div>
+        <!--        <div id="noVNC_control_bar_handle" title="Hide/Show the control bar"><div></div></div>-->
 
         <div class="noVNC_scroll">
 
@@ -330,10 +336,10 @@
 
 </div> <!-- End of noVNC_control_bar -->
 
-<div id="noVNC_hint_anchor" class="noVNC_vcenter">
-    <div id="noVNC_control_bar_hint">
-    </div>
-</div>
+<!--<div id="noVNC_hint_anchor" class="noVNC_vcenter">-->
+<!--    <div id="noVNC_control_bar_hint">-->
+<!--    </div>-->
+<!--</div>-->
 
 <!-- Status dialog -->
 <div id="noVNC_status"></div>
