@@ -94,8 +94,25 @@
 
         // See docs/EMBEDDING.md for a list of possible settings.
 
-        UI.start({ settings: { defaults: defaults,
-                mandatory: mandatory } });
+
+        function addControlbarHandlers() {
+            const controlBar = document.getElementById('noVNC_control_bar');
+            const controlBarHandle = document.getElementById('noVNC_control_bar_handle');
+
+            // 确保元素存在再添加事件监听器
+            if (controlBar && controlBarHandle) {
+                controlBarHandle.addEventListener('click', function() {
+                    controlBar.style.display = (controlBar.style.display === 'none') ? 'block' : 'none';
+                });
+            } else {
+                console.warn('找不到控制栏元素');
+            }
+        }
+
+        ocument.addEventListener('DOMContentLoaded', function () {
+            // 你的初始化代码
+            UI.start({ settings: { defaults: defaults, mandatory: mandatory } });
+        });
     </script>
     <style>
         #noVNC_control_bar {
