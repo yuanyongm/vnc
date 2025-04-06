@@ -93,27 +93,7 @@
         // mandatory['view_only'] = true;
 
         // See docs/EMBEDDING.md for a list of possible settings.
-
-
-        function addControlbarHandlers() {
-            const controlBar = document.getElementById('noVNC_control_bar');
-            const controlBarHandle = document.getElementById('noVNC_control_bar_handle');
-
-            // 确保元素存在再添加事件监听器
-            if (controlBar && controlBarHandle) {
-                controlBarHandle.addEventListener('click', function() {
-                    controlBar.style.display = (controlBar.style.display === 'none') ? 'block' : 'none';
-                });
-            } else {
-                console.warn('找不到控制栏元素');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // 你的初始化代码
-            addControlbarHandlers();
             UI.start({ settings: { defaults: defaults, mandatory: mandatory } });
-        });
     </script>
     <style>
         #noVNC_control_bar {
